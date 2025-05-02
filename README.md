@@ -31,4 +31,3 @@ Kwik Tips Mobile is a mobile version of the Kwik Tips web app — a tool designe
    ```bash
    git clone https://github.com/your-username/kwik-tips-mobile.git
    cd kwik-tips-mobile
->>>>>>> a1a31499f9b1968d4d8d2247d7c9e2d6f64cdce4
