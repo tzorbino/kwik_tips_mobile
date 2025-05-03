@@ -301,14 +301,14 @@ class _CreateTipReportScreenState extends State<CreateTipReportScreen> {
 
       TextField(
         controller: _cashTipsController,
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.numberWithOptions(decimal: true),
         decoration: _inputDecoration('Total Cash Tips'),
       ),
       const SizedBox(height: 10),
 
       TextField(
         controller: _ccTipsController,
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.numberWithOptions(decimal: true),
         decoration: _inputDecoration('Total Credit Card Tips'),
       ),
     ]);
@@ -318,13 +318,13 @@ class _CreateTipReportScreenState extends State<CreateTipReportScreen> {
     return _buildCard([
       TextField(
         controller: _alcoholSalesController,
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.numberWithOptions(decimal: true),
         decoration: _inputDecoration('Alcohol Sales'),
       ),
       const SizedBox(height: 10),
       TextField(
         controller: _barTipOutPercentageController,
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.numberWithOptions(decimal: true),
         decoration: _inputDecoration('Bar Tip-Out %'),
       ),
     ]);
@@ -347,13 +347,13 @@ class _CreateTipReportScreenState extends State<CreateTipReportScreen> {
   Widget _buildRunnerCard(int index) {
     return _buildEntryCard([
       TextField(
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.numberWithOptions(decimal: true),
         decoration: _inputDecoration('Food Sales'),
         onChanged: (value) => _foodRunners[index]['foodSales'] = value,
       ),
       const SizedBox(height: 10),
       TextField(
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.numberWithOptions(decimal: true),
         decoration: _inputDecoration('Tip %'),
         onChanged: (value) => _foodRunners[index]['foodRunnerTip'] = value,
       ),
@@ -382,19 +382,19 @@ class _CreateTipReportScreenState extends State<CreateTipReportScreen> {
         const SizedBox(height: 10),
         TextField(
           controller: _barbackCashTipPercentageController,
-          keyboardType: TextInputType.number,
+          keyboardType: TextInputType.numberWithOptions(decimal: true),
           decoration: _inputDecoration('Barback Cash Tip %'),
         ),
         const SizedBox(height: 10),
         TextField(
           controller: _barbackCcTipPercentageController,
-          keyboardType: TextInputType.number,
+          keyboardType: TextInputType.numberWithOptions(decimal: true),
           decoration: _inputDecoration('Barback CC Tip %'),
         ),
         const SizedBox(height: 10),
         TextField(
           controller: _barbackShiftLengthController,
-          keyboardType: TextInputType.number,
+          keyboardType: TextInputType.numberWithOptions(decimal: true),
           decoration: _inputDecoration('Shift Length (hours)'),
         ),
       ],
