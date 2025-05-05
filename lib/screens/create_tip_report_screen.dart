@@ -72,7 +72,12 @@ class _CreateTipReportScreenState extends State<CreateTipReportScreen> {
     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
   );
 
-  DateTime combineDateAndTime(DateTime date, TimeOfDay time) {
+  DateTime combineDateAndTime(
+    DateTime baseDate,
+    TimeOfDay time, {
+    bool addDay = false,
+  }) {
+    final date = addDay ? baseDate.add(Duration(days: 1)) : baseDate;
     return DateTime(date.year, date.month, date.day, time.hour, time.minute);
   }
 
@@ -160,7 +165,11 @@ class _CreateTipReportScreenState extends State<CreateTipReportScreen> {
                                     combineDateAndTime(
                                       _selectedDate!,
                                       barback['timeOut'],
+                                      addDay:
+                                          barback['timeOut'].hour <
+                                          barback['timeIn'].hour,
                                     ).toIso8601String().split('.').first,
+
                                 'shiftLength':
                                     double.tryParse(
                                       _barbackShiftLengthController.text,
@@ -183,6 +192,9 @@ class _CreateTipReportScreenState extends State<CreateTipReportScreen> {
                                     combineDateAndTime(
                                       _selectedDate!,
                                       bartender['timeOut'],
+                                      addDay:
+                                          bartender['timeOut'].hour <
+                                          bartender['timeIn'].hour,
                                     ).toIso8601String().split('.').first,
                               },
                             )
